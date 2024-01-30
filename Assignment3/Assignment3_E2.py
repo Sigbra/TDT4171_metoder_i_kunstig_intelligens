@@ -34,4 +34,4 @@ def forward_algorithm_filtering(observations, transition_m, observation_true_m, 
 # print(f"Probability of rain at day 2 (after observations): {normalized_forward_msgs_part1[-1]} \n")
 
 normalized_forward_msgs_part2 = forward_algorithm_filtering(observations_part2, transition_m, observation_true_m, init_prob)
-print(f"All normalized forward messages with the 5 days worth of evidence:\n {normalized_forward_msgs_part2}\n")
+print(f"All normalized forward messages with the 5 days worth of observations:\n {normalized_forward_msgs_part2}\n")
