@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<decision id="Desition">
+			<state id="TunnelRoute" />
+			<state id="MountainRoute" />
+		</decision>
+		<cpt id="Distance">
+			<state id="Distance_5km" />
+			<state id="Distance_10km" />
+			<parents>Desition</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="RoadWork">
+			<state id="RoadWork" />
+			<state id="NoRoadWork" />
+			<parents>Desition</parents>
+			<probabilities>0.05 0.95 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Weather">
+			<state id="GoodWeather" />
+			<state id="BadWeather" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="NiceScenery">
+			<state id="BeautifullScenery" />
+			<state id="BooringScenery" />
+			<parents>Desition Weather</parents>
+			<probabilities>0 1 0 1 0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="NeedingToCharge">
+			<state id="ChangeNeccesary" />
+			<state id="EnoughBattery" />
+			<parents>Distance</parents>
+			<probabilities>0.01 0.99 0.6 0.4</probabilities>
+		</cpt>
+		<cpt id="TimeUsage">
+			<state id="GettingToDestinationInTime" />
+			<state id="NotGettingToDestinationInTime" />
+			<parents>Distance NeedingToCharge</parents>
+			<probabilities>0.8 0.2 0.99 0.01 0.5 0.5 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="RoadSafety">
+			<state id="Accident" />
+			<state id="NoAccident" />
+			<parents>Weather Desition RoadWork</parents>
+			<probabilities>0.002 0.998 0.0005 0.9995000000000001 0.004 0.996 0.001 0.999 0.004 0.996 0.001 0.999 0.008 0.992 0.004 0.996</probabilities>
+		</cpt>
+		<utility id="Utility">
+			<parents>TimeUsage RoadSafety NiceScenery</parents>
+			<utilities>5 4 70 60 4 3 60 50</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3402.0 ACADEMIC" name="Network1">
+			<node id="NiceScenery">
+				<name>Scenery</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>783 325 868 368</position>
+				<barchart active="true" width="180" height="64" />
+			</node>
+			<node id="NeedingToCharge">
+				<name>NeedingToCharge</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1120 128 1202 168</position>
+				<barchart active="true" width="222" height="63" />
+			</node>
+			<node id="RoadSafety">
+				<name>RoadSafety</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>577 447 661 489</position>
+				<barchart active="true" width="140" height="63" />
+			</node>
+			<node id="Weather">
+				<name>Weather</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>580 321 653 366</position>
+				<barchart active="true" width="145" height="64" />
+			</node>
+			<node id="TimeUsage">
+				<name>Time</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>959 219 1044 261</position>
+				<barchart active="true" width="307" height="62" />
+			</node>
+			<node id="Utility">
+				<name>Utility</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>976 454 1033 486</position>
+				<barchart active="true" width="202" height="63" />
+			</node>
+			<node id="Desition">
+				<name>Desition</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>308 130 405 168</position>
+				<barchart active="true" width="204" height="64" />
+			</node>
+			<node id="Distance">
+				<name>Distance</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>818 129 875 164</position>
+				<barchart active="true" width="187" height="65" />
+			</node>
+			<node id="RoadWork">
+				<name>RoadWork</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>325 453 387 491</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
