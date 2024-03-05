@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Prize">
+			<state id="A" />
+			<state id="B" />
+			<state id="C" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333333</probabilities>
+		</cpt>
+		<cpt id="Choice">
+			<state id="A" />
+			<state id="B" />
+			<state id="C" />
+			<probabilities>0.3333333333333334 0.3333333333333334 0.3333333333333333</probabilities>
+		</cpt>
+		<cpt id="OpenOfficial">
+			<state id="A" />
+			<state id="B" />
+			<state id="C" />
+			<parents>Choice Prize</parents>
+			<probabilities>0 0.5 0.5 0 0 1 0 1 0 0 0 1 0.5 0 0.5 1 0 0 0 1 0 1 0 0 0.5 0.5 0</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3402.0 ACADEMIC" name="Network1">
+			<node id="Prize">
+				<name>Prize</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>33 280 149 333</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Choice">
+				<name>My Choice</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>36 31 148 78</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="OpenOfficial">
+				<name>OpenedByOfficial</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>30 159 153 204</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
